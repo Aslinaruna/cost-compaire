@@ -1,0 +1,84 @@
+In the busy city of Veloria, Professor Dynamics is on an exciting trip to meet with his fellow researcher, Professor Celestia. Their meeting place is along the mysterious Velorian Highway 999, which has a tollgate guarded by the Tollgate Guardians. They offer three different passes for travel: the Solo Trail, the Roundabout Ride, and the Monthly Pass
+
+Professor Dynamics plans his monthly trips, and he comes across an interesting challenge. There's a tollgate that acts as the start of his adventures, and it presents him with a tricky puzzle. He needs to find the best way to travel, sometimes going alone and other times taking longer, circular routes. He must figure out how to do this in the most cost-effective way, especially when the prices for different travel options align in a special way with the cost of a special ticket called the Monthly Pass.
+
+There are three types of tickets:
+
+The Solo Trail ticket costs R, The Monthly Pass, which offers unlimited access, costs $L. Your task is to write a program that helps Professor Dynamics find the cheapest way to travel for the month.
+
+Input Format
+
+An integer 'x,' the sum of solo travels adventures without returning. An integer 'y,' the count of travels to Celestia's abode with a return on the same day. A floating-point number 's,' the cost of a Solo Trail pass. A floating-point number 'r,' the cost of a Roundabout Ride pass that. A floating-point number 'l,' the revered cost of a Monthly Pass.
+
+Constraints
+
+Null
+
+Output Format
+
+A celestial saga unfolds: "Monthly Pass" if the harmonious Monthly Pass is the wise choice, "Solo Trail + Roundabout Ride" for the balanced combination, or "Invalid Input" for Solo Trail pass price is more than Roundabout Ride pass and twice of Solo Trail pass is lesser than Roundabout Ride pass.
+
+Sample Input 0
+
+8
+12
+20
+30
+2000
+Sample Output 0
+
+Solo Trail + Roundabout Ride
+Sample Input 1
+
+5
+10
+12
+20
+100
+Sample Output 1
+
+Monthly Pass
+Sample Input 2
+
+20
+20
+100
+50
+10000
+Sample Output 2
+
+Invalid Input
+Sample Input 3
+
+15
+8
+12
+15
+180
+Sample Output 3
+
+Monthly Pass
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        float s=sc.nextFloat();
+         float r=sc.nextFloat();
+         float m=sc.nextFloat();
+        float sx=x*s;
+        float ry=r*y;
+        float sr=sx+ry;
+        if(s>r)
+            System.out.print("Invalid Input");
+        else if (m>sr)
+            System.out.print("Solo Trail + Roundabout Ride");
+        else
+            System.out.print("Monthly Pass");
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
